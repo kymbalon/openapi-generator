@@ -9,7 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,xx
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -1249,7 +1249,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
 
     private boolean hasOAuthMethods(List<CodegenSecurity> authMethods) {
         for (CodegenSecurity cs : authMethods) {
-            if (cs.isOAuth) {
+            if (Boolean.TRUE.equals(cs.isOAuth)) {
                 return true;
             }
         }
@@ -1259,7 +1259,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
 
     private boolean hasBearerMethods(List<CodegenSecurity> authMethods) {
         for (CodegenSecurity cs : authMethods) {
-            if (cs.isBasicBearer) {
+            if (Boolean.TRUE.equals(cs.isBasicBearer)) {
                 return true;
             }
         }
@@ -1271,7 +1271,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
         List<CodegenSecurity> oauthMethods = new ArrayList<>();
 
         for (CodegenSecurity cs : authMethods) {
-            if (cs.isOAuth) {
+            if (Boolean.TRUE.equals(cs.isOAuth)) {
                 oauthMethods.add(cs);
             }
         }
